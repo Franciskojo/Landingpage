@@ -87,14 +87,14 @@ nav {
 }
 
 .vission {
-  margin-top: 80px;
+  margin-top: 30px;
 }
 
 .statement {
   display: flex;
   justify-content: space-around;
   gap: 20px;
-  margin-top: 20px;
+  margin-top: 60px;
 }
 
 .boarder {
