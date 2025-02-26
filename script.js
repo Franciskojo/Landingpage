@@ -6,6 +6,11 @@ hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
+function toggleMenu() {
+    const container = document.querySelector('.container');
+    container.classList.toggle('active');
+}
+
 // Form submission
 const contactForm = document.getElementById('contact-form');
 
