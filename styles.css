@@ -693,6 +693,7 @@ transform: scale(1.05);
   background-color: #007BFF;
   color: #fff;
   padding: 50px 20px;
+  text-align: center; /* Center-align text for better readability */
 }
 
 .newsletter-form {
@@ -700,13 +701,15 @@ transform: scale(1.05);
   justify-content: center;
   gap: 10px;
   margin-top: 20px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .newsletter-form input {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  width: 250px;
+  width: 100%; /* Full width on smaller screens */
+  max-width: 250px; /* Limit maximum width */
 }
 
 .newsletter-form button {
@@ -716,6 +719,40 @@ transform: scale(1.05);
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  width: 100%; /* Full width on smaller screens */
+  max-width: 150px; /* Limit maximum width */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  #newsletter {
+    padding: 30px 15px; /* Reduce padding for smaller screens */
+  }
+
+  .newsletter-form {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center-align items */
+    gap: 15px; /* Increase gap for better spacing */
+  }
+
+  .newsletter-form input,
+  .newsletter-form button {
+    max-width: 100%; /* Full width on very small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  #newsletter {
+    padding: 20px 10px; /* Further reduce padding for very small screens */
+  }
+
+  .newsletter-form input {
+    font-size: 14px; /* Adjust font size for better readability */
+  }
+
+  .newsletter-form button {
+    font-size: 14px; /* Adjust font size for better readability */
+  }
 }
 
 .contact {
