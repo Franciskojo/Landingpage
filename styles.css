@@ -550,6 +550,7 @@ transform: scale(1.05);
   padding: 60px 5%;
   text-align: center;
   overflow: hidden;
+  width: 100%;
 }
 
 #testimonials h2 {
@@ -714,8 +715,8 @@ transform: scale(1.05);
 
 .newsletter-form button {
   padding: 10px 20px;
-  background-color: #0056b3;
-  color: #fff;
+  background-color: blanchedalmond;
+  color: black;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -789,8 +790,8 @@ transform: scale(1.05);
 
 .contact-form button {
   padding: 10px 20px;
-  background-color: #007BFF;
-  color: #fff;
+  background-color: blanchedalmond;
+  color: black;
   border: none;
   border-radius: 5px;
   cursor: pointer;
