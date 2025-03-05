@@ -103,24 +103,22 @@ nav {
   justify-content: center;
   text-align: center;
   color: white;
-  background-image: url('assets/is2.jpg'), url('assets/back3.webp'), url('assets/back4.webp'); /* Add multiple images */
+  background-image: url('assets/waste-management.jpg'), url('assets/painter-1937575_1280.jpg'); /* Add multiple images */
   background-size: cover;
   background-position: center;
-  animation: fadeBackground 15s infinite; /* Animation duration */
+  animation: fadeBackground 30s infinite; /* Animation duration */
 }
 
 @keyframes fadeBackground {
   0% {
-      background-image: url('assets/is2.jpg'); /* First image */
+      background-image: url('assets/waste-management.jpg'); /* First image */
   }
-  33% {
-      background-image: url('assets/back3.webp'); /* Second image */
+  60% {
+      background-image: url('assets/painter-1937575_1280.jpg'); /* Second image */
   }
-  66% {
-      background-image: url('assets/back4.webp'); /* Third image */
-  }
+  
   100% {
-      background-image: url('assets/is2.jpg'); /* Loop back to first image */
+      background-image: url('assets/waste-management.jpg'); /* Loop back to first image */
   }
 }
 
@@ -690,12 +688,12 @@ transform: scale(1.05);
 
 
 
-#newsletter {
+/* #newsletter {
   background-color: #007BFF;
   color: #fff;
   padding: 50px 20px;
-  text-align: center; /* Center-align text for better readability */
-}
+  text-align: center; 
+} */
 
 .newsletter-form {
   display: flex;
@@ -711,6 +709,7 @@ transform: scale(1.05);
   border-radius: 5px;
   width: 100%; /* Full width on smaller screens */
   max-width: 250px; /* Limit maximum width */
+  margin-top: 30px;
 }
 
 .newsletter-form button {

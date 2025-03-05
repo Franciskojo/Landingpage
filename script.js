@@ -83,3 +83,5 @@ if (testimonialItem) {
     testimonialItems.addEventListener('mouseenter', () => clearInterval(autoSlide));
     testimonialItems.addEventListener('mouseleave', () => autoSlide = setInterval(nextTestimonial, 5000));
 }
+
+
