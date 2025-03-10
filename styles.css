@@ -61,7 +61,7 @@ nav {
 
 
 /* Enquire Now Button */
-.enquire-btn {
+.order-now-btn {
   padding: 10px 20px;
   /* background-color: #61f4e0; */
   color: white;
@@ -72,8 +72,8 @@ nav {
   transition: all 0.3s ease-in-out;
 }
 
-.enquire-btn:hover {
-  transform: scale(1.5);
+.order-now-btn:hover {
+  color: #28a745;
 }
 
 .text {
