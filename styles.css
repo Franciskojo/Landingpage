@@ -40,13 +40,13 @@ nav {
 }
 
 /* Centering Navigation Links */
-.container a[href="#hero"] {
+/* .container a[href="#hero"] {
   font-weight: bold;
   background-image: url('assets/home-icon.png');
   background-repeat: no-repeat;
   background-position: left center;
   padding-left: 20px;
-}
+} */
 
 
 .container {
@@ -63,12 +63,12 @@ nav {
 /* Enquire Now Button */
 .order-now-btn {
   padding: 10px 20px;
-  /* background-color: #61f4e0; */
+  background-color: #61f4e0;
   color: white;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bold;
   text-decoration: none;
-  border-radius: 50px;
+  border-radius: 30px;
   transition: all 0.3s ease-in-out;
 }
 
