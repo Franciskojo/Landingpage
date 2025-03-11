@@ -648,44 +648,62 @@ transform: scale(1.05);
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  #testimonials h2 {
+    font-size: 2rem;
+  }
+
   .testimonial-item {
-      padding: 20px;
-      font-size: 1rem;
+    padding: 20px;
+    margin: 0 10px;
   }
 
   .testimonial-text {
-      font-size: 1rem;
+    font-size: 1rem;
   }
 
   .stars {
-      font-size: 1rem;
+    font-size: 1rem;
   }
 
   .carousel-button {
-      font-size: 1.2rem;
-      padding: 10px;
+    font-size: 1.2rem;
+    padding: 10px;
+  }
+
+  .testimonial-img {
+    width: 60px;
+    height: 60px;
   }
 }
 
 @media (max-width: 480px) {
+  #testimonials h2 {
+    font-size: 1.8rem;
+  }
+
   .testimonial-item {
-      padding: 15px;
+    padding: 15px;
+    margin: 0 5px;
   }
 
   .testimonial-text {
-      font-size: 0.9rem;
+    font-size: 0.9rem;
   }
 
   .stars {
-      font-size: 0.9rem;
+    font-size: 0.9rem;
   }
 
   .carousel-button {
-      font-size: 1rem;
-      padding: 8px;
+    font-size: 1rem;
+    padding: 8px;
+  }
+
+  .testimonial-img {
+    width: 50px;
+    height: 50px;
   }
 }
-
 
 
 /* #newsletter {

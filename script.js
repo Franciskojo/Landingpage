@@ -43,45 +43,92 @@ if (contactForm) {
 }
 
 
-
-// Testimonial Carousel
+// Testimonials
 const testimonialItems = document.querySelector('.testimonial-items');
-const testimonialItem = document.querySelector('.testimonial-item'); // Ensure it exists
+const testimonialItem = document.querySelector('.testimonial-item');
 const prevButton = document.querySelector('.carousel-button.prev');
 const nextButton = document.querySelector('.carousel-button.next');
 
-if (testimonialItem) {
-    let testimonialItemWidth = testimonialItem.clientWidth; // Get dynamic width
+if (testimonialItems && testimonialItem) {
+    let testimonialItemWidth = testimonialItem.clientWidth;
     let currentIndex = 0;
+    let autoSlide = setInterval(nextTestimonial, 5000);
 
-    // Function to move to the next testimonial
+    // Handle window resizing
+    window.addEventListener('resize', () => {
+        testimonialItemWidth = testimonialItem.clientWidth;
+        updateCarousel();
+    });
+
+    // Navigation functions
     function nextTestimonial() {
         currentIndex = (currentIndex + 1) % testimonialItems.children.length;
         updateCarousel();
     }
 
-    // Function to move to the previous testimonial
     function prevTestimonial() {
         currentIndex = (currentIndex - 1 + testimonialItems.children.length) % testimonialItems.children.length;
         updateCarousel();
     }
 
-    // Update the carousel position
     function updateCarousel() {
         const offset = -currentIndex * testimonialItemWidth;
         testimonialItems.style.transform = `translateX(${offset}px)`;
     }
 
-    // Add event listeners for navigation buttons
-    prevButton.addEventListener('click', prevTestimonial);
-    nextButton.addEventListener('click', nextTestimonial);
+    // Add event listeners for buttons
+    prevButton.addEventListener('click', () => {
+        clearInterval(autoSlide);
+        prevTestimonial();
+        autoSlide = setInterval(nextTestimonial, 5000);
+    });
 
-    // Auto-play the carousel
-    let autoSlide = setInterval(nextTestimonial, 5000); // Change testimonial every 5 seconds
+    nextButton.addEventListener('click', () => {
+        clearInterval(autoSlide);
+        nextTestimonial();
+        autoSlide = setInterval(nextTestimonial, 5000);
+    });
 
-    // Pause autoplay on hover (optional)
-    testimonialItems.addEventListener('mouseenter', () => clearInterval(autoSlide));
-    testimonialItems.addEventListener('mouseleave', () => autoSlide = setInterval(nextTestimonial, 5000));
+    // Touch support for mobile
+    let startX = 0;
+    let isDragging = false;
+
+    testimonialItems.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+    });
+
+    testimonialItems.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        const currentX = e.touches[0].clientX;
+        const diffX = startX - currentX;
+        testimonialItems.style.transform = `translateX(${-currentIndex * testimonialItemWidth - diffX}px)`;
+    });
+
+    testimonialItems.addEventListener('touchend', (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+
+        const endX = e.changedTouches[0].clientX;
+        const diffX = startX - endX;
+
+        if (Math.abs(diffX) > testimonialItemWidth / 4) {
+            if (diffX > 0) {
+                nextTestimonial();
+            } else {
+                prevTestimonial();
+            }
+        } else {
+            updateCarousel();
+        }
+    });
+
+    // Disable buttons and autoplay if there's only one testimonial
+    if (testimonialItems.children.length <= 1) {
+        prevButton.style.display = 'none';
+        nextButton.style.display = 'none';
+        clearInterval(autoSlide);
+    }
+} else {
+    console.error('Testimonial carousel elements not found!');
 }
-
-
